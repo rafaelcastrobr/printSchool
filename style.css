@@ -1,0 +1,44 @@
+body {
+  text-align: center;
+}
+
+button{
+  
+  width: 100px;
+  height: 40px;
+  font: bold 1.2rem serif;
+  border-radius: 5%;
+  background: #aca8a8;
+  color: rgb(44, 40, 26);
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input {
+flex-direction: column;  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+
+.input label {
+  font: bold 1.5rem serif;
+}
+
+.input input {
+  margin-bottom: 10px;
+  width: 500px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.radio {
+  margin-bottom: 30px;
+  
+}
+
+.tipo {
+  font-size: 20px;
+}
