@@ -1,14 +1,10 @@
-const imprimir = document.getElementById('specific-field');
-
-
-
-
 const botaoImprimir = document.getElementById('imprimir');
-function limparCabecalho() {
-  document.title = "";
-  document.querySelector("title").style.display = "none";
-}
+const botaoLimpar = document.getElementById('limpar');
 
+function limpar() {
+  document.getElementById('nome').value = "";
+  document.getElementById('serie').value = "";
+}
 
 
 function imprimirCampoEspecifico() {
@@ -17,14 +13,14 @@ function imprimirCampoEspecifico() {
   let tipo = document.querySelector("input[name='tipo']:checked").value;
   // novaJanela.document.write(`${nome}<br>${serie}ª Série`);
 
-  if (tipo == "º Ano" && serie != "" ) {
+  if (tipo == "º Ano" && serie != "" && nome != "") {
     var novaJanela = window.open("", "nova-janela");
 
     novaJanela.document.write(`<p style="font-size: 30px;">
        ${nome}<br>
         ${serie}${tipo}
         </p>`
-        );
+    );
 
     novaJanela.print();
 
@@ -32,14 +28,14 @@ function imprimirCampoEspecifico() {
   }
 
 
-  if (tipo != "º Ano" ) {
+  if (tipo != "º Ano" && nome != "") {
     var novaJanela = window.open("", "nova-janela");
 
     novaJanela.document.write(`<p style="font-size: 30px;">
        ${nome}<br>
        ${tipo}
         </p>`
-        );
+    );
 
     novaJanela.print();
 
@@ -50,3 +46,4 @@ function imprimirCampoEspecifico() {
 }
 
 botaoImprimir.addEventListener('click', imprimirCampoEspecifico);
+botaoLimpar.addEventListener('click', limpar);
